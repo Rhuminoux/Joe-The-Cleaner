@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,14 @@ public class Manager : MonoBehaviour
     {
         MAINMENU,
         GAMEMENU,
+        DEATHMENU,
         GAME
     }
 
+    //UI
     public GameObject inGameMenu;
     public GameObject deathMenu;
+    public GameObject inGameUI;
     public GameObject mainMenu;
 
     public State _currentState;
@@ -34,12 +38,6 @@ public class Manager : MonoBehaviour
         ResetGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-     
-    }
-
     public void SetStateGame()
     {
         _currentState = State.GAME;
@@ -49,6 +47,15 @@ public class Manager : MonoBehaviour
     public void SetStateMainMenu()
     {
         _currentState = State.MAINMENU;
+        inGameUI.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    internal void SetStateDeathMenu()
+    {
+        _currentState = State.DEATHMENU;
+        deathMenu.SetActive(true);
+        inGameUI.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         Time.timeScale = 0;
     }
 
@@ -71,6 +78,7 @@ public class Manager : MonoBehaviour
     public void SetEnvActive(bool boolean)
     {
         _currentEnv.SetActive(boolean);
+        SetStateGame();
     }
 
     public void ResetGame()

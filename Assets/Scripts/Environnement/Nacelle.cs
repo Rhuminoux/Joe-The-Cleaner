@@ -46,18 +46,29 @@ public class Nacelle : MonoBehaviour
                 _newPoint += Time.deltaTime;
         }
     }
-    // Update is called once per frame
-    void FixedUpdate()
+
+    private void SetLimits()
     {
         if (jointL.distance > 9)
             jointL.distance = 9;
+        else if (jointL.distance < 2)
+            jointL.distance = 2;
         if (jointR.distance > 9)
             jointR.distance = 9;
+        else if (jointR.distance < 2)
+            jointR.distance = 2;
+
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        SetLimits();
 
         if (joystickL.Vertical != 0)
         {
             _newDist = jointL.distance - joystickL.Vertical * speed * Time.deltaTime;
-            if (_newDist - jointR.distance > -2 && _newDist - jointR.distance < 2 & (jointL.distance > 2 && jointL.distance <= 9))
+            if (_newDist - jointR.distance > -2 && _newDist - jointR.distance < 2 & (jointL.distance >= 2 && jointL.distance <= 9))
             {
                 jointL.distance = _newDist;
                 if (!audioL.isPlaying)
@@ -70,7 +81,7 @@ public class Nacelle : MonoBehaviour
         if (joystickR.Vertical != 0)
         {
             _newDist = jointR.distance - joystickR.Vertical * speed * Time.deltaTime;
-            if (_newDist - jointL.distance > -2 && _newDist - jointL.distance < 2 && (jointR.distance > 2 && jointR.distance <= 9))
+            if (_newDist - jointL.distance > -2 && _newDist - jointL.distance < 2 && (jointR.distance >= 2 && jointR.distance <= 9))
             {
                 jointR.distance = _newDist;
                 if (!audioR.isPlaying)

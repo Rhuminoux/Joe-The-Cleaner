@@ -8,13 +8,11 @@ public class Player : MonoBehaviour
     public Sprite cleaningJoe;
 
     public Manager gameManager;
-    public GameObject deathMenu;
     public Nacelle nacelle;
 
     private void Start()
     {
         gameManager = GameObject.Find("Manager").GetComponent<Manager>();
-        deathMenu = gameManager.deathMenu;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,8 +27,7 @@ public class Player : MonoBehaviour
         }
         else if (collision.tag.StartsWith("Rock"))
         {
-            deathMenu.SetActive(true);
-            gameManager.SetStateGameMenu();
+            gameManager.SetStateDeathMenu();
         }
     }
 

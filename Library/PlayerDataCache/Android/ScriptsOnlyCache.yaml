@@ -270,16 +270,16 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: a6e561615949734e9f12f9b61661f43e
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Image
-  - hash:
-      serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: a6e561615949734e9f12f9b61661f43e
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Image
   - hash:
       serializedVersion: 2
       Hash: f69dfc6409fbbd89d3689368e99688a8
@@ -324,7 +324,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 8145c52929f4c065fa0288fef21322b2
+      Hash: 500c885c2ddb343e8a6954aafe57d2cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -726,7 +726,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 597e5947197e82c5cdbbccff67b04945
+      Hash: f49f34d4ac28cda9af023465f361687f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Manager
@@ -1249,5 +1249,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/Rhum/Documents/GitHub/Joe-The-Cleaner/WindowCleaner go brrrr!/Build/Joe
-    the Cleaner.apk
+  playerPath: C:/Users/Rhum/Documents/GitHub/Joe-The-Cleaner/Build/Joe the Cleaner.apk
